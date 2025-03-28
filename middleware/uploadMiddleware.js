@@ -178,10 +178,22 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Configure Multer to store files temporarily
+// // Configure Multer to store files temporarily
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, 'uploads/');
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, `${Date.now()}-${file.originalname}`);
+//   },
+// });
+
+//For file uploads and the uploads directory, you'll need to modify the uploadMiddleware.js to use tmp directory instead since Vercel's filesystem is read-only:
+//changed code 
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/');
+    cb(null, '/tmp'); // Change uploads/ to /tmp
   },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}-${file.originalname}`);
