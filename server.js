@@ -17,7 +17,13 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(passport.initialize());
-app.use(cors())
+
+// CORS configuration
+const corsOptions = {
+  origin: 'https://qefrontend.vercel.app',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 // Connect to MongoDB
 connectDB();
