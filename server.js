@@ -20,7 +20,7 @@ app.use(passport.initialize());
 
 // CORS configuration
 const corsOptions = {
-  origin: 'https://qefrontend.vercel.app',
+  origin: ['https://qefrontend.vercel.app', 'https://qefront.vercel.app','https://qefront-katiyarsonus-projects.vercel.app/','https://vercel.com/katiyarsonus-projects/qefrontend/H38qHiCG58bgBJ8AYbAWR8uE4gED'],
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
