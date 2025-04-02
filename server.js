@@ -21,7 +21,8 @@ app.use(passport.initialize());
 // CORS configuration
 const corsOptions = {
   origin: ['https://cf3ea265-389b-4f14-955b-0b1de492f5c0-00-1grzzwf0tt0uz.spock.replit.dev:6800','https://qefrontend-git-main-katiyarsonus-projects.vercel.app','https://qefrontend.vercel.app', 'https://qefrontend-9obnrc4qn-katiyarsonus-projects.vercel.app','https://qefront.vercel.app','https://qefront-katiyarsonus-projects.vercel.app/','https://vercel.com/katiyarsonus-projects/qefrontend/H38qHiCG58bgBJ8AYbAWR8uE4gED'],
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+    credentials: true // Add this line to allow credentials
 };
 app.use(cors(corsOptions));
 
